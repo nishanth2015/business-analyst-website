@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishanth BA Academy - Business Analyst Training</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0a2463;
+            --light-navy: #1e3a8a;
+            --accent: #f97316;
+            --light-accent: #fdba74;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --gray: #64748b;
+            --dark-gray: #334155;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn:hover {
+            background: var(--light-navy);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--navy);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-btns {
+            margin-top: 30px;
+        }
+        
+        .hero-btns .btn {
+            margin: 0 10px;
+        }
+        
+        .highlight-boxes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 60px;
+            gap: 20px;
+        }
+        
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+        }
+        
+        .highlight-box i {
+            font-size: 2rem;
+            color: var(--light-accent);
+            margin-bottom: 10px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .experience-tag {
+            display: inline-block;
+            background: var(--light-accent);
+            color: var(--navy);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .company-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .company-tag {
+            background: var(--light-gray);
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .philosophy {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        /* Courses Section */
+        .courses {
+            background: var(--light-gray);
+        }
+        
+        .course-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .course-header {
+            background: var(--navy);
+            color: white;
+            padding: 25px;
+        }
+        
+        .course-header h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .course-body {
+            padding: 25px;
+        }
+        
+        .course-topics {
+            margin: 20px 0;
+        }
+        
+        .course-topics li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .course-topics i {
+            color: var(--accent);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        /* Why Choose Us */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: var(--light-gray);
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--light-accent);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            opacity: 0.5;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--navy);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            background: var(--light-gray);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: left 0.3s;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0 0 25px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .course-cards, .features, .testimonial-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Nishanth<span>BA</span> Academy</a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Trainer</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#why">Why Choose Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Become a Job-Ready Business Analyst</h1>
+            <p>Learn Business Analysis, Product Ownership, and Managerial Skills from Nishanth P, a 15+ years industry expert with Big-4 consulting and enterprise project experience.</p>
+            
+            <div class="hero-btns">
+                <a href="#courses" class="btn">View Course Details</a>
+                <a href="#contact" class="btn btn-outline">Talk to Trainer</a>
+            </div>
+            
+            <div class="highlight-boxes">
+                <div class="highlight-box">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>15+ Years Experience</h4>
+                </div>
+                <div class="highlight-box">
+                    <i class="fas fa-building"></i>
+                    <h4>Big-4 & MNC Background</h4>
+                </div>
+                <div class="highlight-box">
+                    <i class="fas fa-project-diagram"></i>
+                    <h4>Real-Time Projects</h4>
+                </div>
+                <div class="highlight-box">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>Interview-Focused</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Your Trainer</h2>
+                <p>Learn from an industry veteran with real-world experience across top organizations</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-img">
+                    <!-- Placeholder for trainer image -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Nishanth P - Business Analyst Trainer">
+                </div>
+                
+                <div class="about-text">
+                    <div class="experience-tag">15+ Years Industry Experience</div>
+                    <h3>Nishanth P</h3>
+                    <h4>Business Analyst | Product Owner | Manager</h4>
+                    
+                    <p>With over 15+ years of professional experience, Nishanth P has worked across Big-4 consulting firms, Wipro, Infor, and leading Healthcare & Insurance organizations.</p>
+                    
+                    <p>He brings real-world exposure in:</p>
+                    <ul>
+                        <li>Business Analysis & Requirement Engineering</li>
+                        <li>Product Ownership & Agile Delivery</li>
+                        <li>Stakeholder & Program Management</li>
+                        <li>Enterprise Healthcare & Insurance Systems</li>
+                        <li>Government & Large-Scale Digital Transformations</li>
+                    </ul>
+                    
+                    <div class="company-list">
+                        <div class="company-tag">Big 4 Consulting</div>
+                        <div class="company-tag">Wipro</div>
+                        <div class="company-tag">Infor</div>
+                        <div class="company-tag">Healthcare</div>
+                        <div class="company-tag">Insurance</div>
+                    </div>
+                    
+                    <div class="philosophy">
+                        <h4>Training Philosophy:</h4>
+                        <p><i>"I don't teach slides. I teach how real projects work in enterprise environments."</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Courses</h2>
+                <p>Comprehensive training programs designed for different career stages</p>
+            </div>
+            
+            <div class="course-cards">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Business Analyst (End-to-End)</h3>
+                        <p>For Freshers | Career Switchers | Junior BAs</p>
+                    </div>
+                    <div class="course-body">
+                        <h4>Key Topics Covered:</h4>
+                        <ul class="course-topics">
+                            <li><i class="fas fa-check"></i> SDLC & BA Role</li>
+                            <li><i class="fas fa-check"></i> Requirement Gathering Techniques</li>
+                            <li><i class="fas fa-check"></i> BRD, FRD, SRS Documentation</li>
+                            <li><i class="fas fa-check"></i> Use Cases & User Stories</li>
+                            <li><i class="fas fa-check"></i> UML & BPMN Modeling</li>
+                            <li><i class="fas fa-check"></i> JIRA, Confluence, Visio</li>
+                            <li><i class="fas fa-check"></i> Real-time Case Studies</li>
+                        </ul>
+                        <a href="#contact" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>Senior BA / Product Owner</h3>
+                        <p>For Experienced BAs | PO Aspirants</p>
+                    </div>
+                    <div class="course-body">
+                        <h4>Key Topics Covered:</h4>
+                        <ul class="course-topics">
+                            <li><i class="fas fa-check"></i> Product Vision & Roadmaps</li>
+                            <li><i class="fas fa-check"></i> Backlog Management & Prioritization</li>
+                            <li><i class="fas fa-check"></i> Stakeholder Negotiation</li>
+                            <li><i class="fas fa-check"></i> Agile / Scrum / SAFe</li>
+                            <li><i class="fas fa-check"></i> Release Planning</li>
+                            <li><i class="fas fa-check"></i> Metrics & KPIs</li>
+                            <li><i class="fas fa-check"></i> Advanced Requirement Techniques</li>
+                        </ul>
+                        <a href="#contact" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>BA Manager / Lead Track</h3>
+                        <p>For Leads | Managers | Delivery Owners</p>
+                    </div>
+                    <div class="course-body">
+                        <h4>Key Topics Covered:</h4>
+                        <ul class="course-topics">
+                            <li><i class="fas fa-check"></i> Team Management & Leadership</li>
+                            <li><i class="fas fa-check"></i> Process Optimization</li>
+                            <li><i class="fas fa-check"></i> Governance & Compliance</li>
+                            <li><i class="fas fa-check"></i> Risk & Change Management</li>
+                            <li><i class="fas fa-check"></i> Client Handling (Big-4 Style)</li>
+                            <li><i class="fas fa-check"></i> Budgeting & Resource Planning</li>
+                            <li><i class="fas fa-check"></i> Strategic Business Analysis</li>
+                        </ul>
+                        <a href="#contact" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Training</h2>
+                <p>What makes this training different from others</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-industry"></i>
+                    <h3>Industry-Driven Curriculum</h3>
+                    <p>Content designed from actual project experiences, not just textbook theory.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Live Interactive Sessions</h3>
+                    <p>No recorded videos. Live sessions with Q&A and real-time problem solving.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Resume & ATS Optimization</h3>
+                    <p>Get your resume optimized for Applicant Tracking Systems used by companies.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-comments"></i>
+                    <h3>Mock Interviews</h3>
+                    <p>Practice with real interview questions from top companies.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Domain-Focused Training</h3>
+                    <p>Special focus on Healthcare & Insurance domains with case studies.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Post-Course Support</h3>
+                    <p>Mentor support continues even after course completion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Testimonials</h2>
+                <p>What our students say about the training experience</p>
+            </div>
+            
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        This is not classroom training, this is industry training. Nishanth sir's experience with Big-4 and healthcare projects made all the difference in my understanding.
+                    </div>
+                    <div class="testimonial-author">— Working Professional</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        I cracked my BA interview after this course. The mock interviews and resume guidance were exactly what I needed to transition from a different field.
+                    </div>
+                    <div class="testimonial-author">— Career Switcher</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The real-time project simulation helped me understand how requirements flow in actual enterprise projects. Highly recommended for anyone serious about BA career.
+                    </div>
+                    <div class="testimonial-author">— Junior Business Analyst</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact & Enroll</h2>
+                <p>Get in touch to start your Business Analyst journey</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Details</h3>
+                    <p>Reach out directly for course details, scheduling, or any queries.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Trainer</h4>
+                            <p>Nishanth P</p>
+                            <p>15+ Years Experience</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>nishanth2015@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone / WhatsApp</h4>
+                            <p>8977977555</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Availability</h4>
+                            <p>Monday - Saturday: 9 AM - 7 PM</p>
+                            <p>Sunday: By Appointment</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Enquiry Form</h3>
+                    <form id="enquiryForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">Current Experience Level</label>
+                            <select id="experience" class="form-control">
+                                <option value="">Select</option>
+                                <option value="fresher">Fresher</option>
+                                <option value="0-2">0-2 Years</option>
+                                <option value="2-5">2-5 Years</option>
+                                <option value="5+">5+ Years</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="course">Course Interested In</label>
+                            <select id="course" class="form-control">
+                                <option value="">Select</option>
+                                <option value="ba">Business Analyst (End-to-End)</option>
+                                <option value="po">Senior BA / Product Owner</option>
+                                <option value="manager">BA Manager / Lead Track</option>
+                                <option value="notsure">Not Sure - Need Guidance</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message / Query</label>
+                            <textarea id="message" class="form-control" rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="#" class="footer-logo">Nishanth<span>BA</span> Academy</a>
+                    <p>Learn Business Analysis from Industry, Not Theory</p>
+                    <p>Building career-ready Business Analysts since 2015</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Trainer</a>
+                        <a href="#courses">Courses</a>
+                        <a href="#why">Why Choose Us</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Courses</h4>
+                    <div class="footer-links">
+                        <a href="#courses">Business Analyst (End-to-End)</a>
+                        <a href="#courses">Senior BA / Product Owner</a>
+                        <a href="#courses">BA Manager / Lead Track</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-links">
+                        <p><i class="fas fa-envelope"></i> nishanth2015@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 8977977555</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Nishanth BA Academy. All Rights Reserved.</p>
+                <p>Designed for aspiring Business Analysts</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Form submission
+        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const course = document.getElementById('course').value;
+            
+            // Create WhatsApp message
+            const message = `Hi, I'm interested in your Business Analyst training.%0A%0A` +
+                           `Name: ${name}%0A` +
+                           `Email: ${email}%0A` +
+                           `Phone: ${phone}%0A` +
+                           `Course Interested: ${course}`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/918977977555?text=${message}`, '_blank');
+            
+            // Show confirmation
+            alert('Thank you for your enquiry! You will be redirected to WhatsApp to connect with the trainer.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
